@@ -1,0 +1,130 @@
+# Main config file for swlacy.github.io
+# https://gohugo.io/getting-started/configuration
+
+theme: blank
+
+baseURL: https://new.swlacy.com/
+title: Sid's Blog
+languageCode: en-us
+timeZone: America/Los_Angeles
+
+copyright: >-
+  Copyright notice here.
+
+menus:
+  main:
+    - name: nnnoikecnewcnjewme
+      pageRef: /
+      weight: 10
+    - name: Posts
+      pageRef: /posts
+      weight: 20
+    - name: Tags
+      pageRef: /tags
+      weight: 30
+
+build:
+  buildStats:
+    enable: true
+
+# buildDrafts: false
+# buildExpired: false
+# buildFuture: false
+
+cleanDestinationDir: true
+watch: true
+
+enableGitInfo: true
+enableRobotsTXT: true
+
+# frontmatter:
+#   date:
+#   - date
+#   - publishdate
+#   - pubdate
+#   - published
+#   - lastmod
+#   - modified
+#   expiryDate:
+#   - expirydate
+#   - unpublishdate
+#   lastmod:
+#   - :git
+#   - lastmod
+#   - modified
+#   - date
+#   - publishdate
+#   - pubdate
+#   - published
+#   publishDate:
+#   - publishdate
+#   - pubdate
+#   - published
+#   - date
+
+imaging:
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+  tdewolff:
+    css:
+      keepCSS2: true
+      precision: 0
+    html:
+      keepComments: false
+      keepConditionalComments: true
+      keepDefaultAttrVals: true
+      keepDocumentTags: true
+      keepEndTags: true
+      keepQuotes: false
+      keepWhitespace: false
+    js:
+      keepVarNames: false
+      precision: 0
+      version: 2022
+    json:
+      keepNumbers: false
+      precision: 0
+    svg:
+      keepComments: false
+      precision: 0
+    xml:
+      keepWhitespace: false
+
+# permalinks:
+#   page:
+#     /: /:year/:month/:slug/
+
+paginate: 16
+removePathAccents: true
+summaryLength: 64

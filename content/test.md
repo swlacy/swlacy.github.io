@@ -1,6 +1,6 @@
 ---
-title: {{ replace .File.ContentBaseName "-" " " | title }}
-date: {{ now.Format "2006-01-02" }}
+title: Test
+date: 2023-09-04
 
 description: 'Lipsum dolor sit amet.'
 tags:
@@ -9,7 +9,7 @@ tags:
 - 'RemoveMe3'
 
 draft: true
-lastmod: {{ now.Format "2006-01-02" }}
+lastmod: 2023-09-04
 ---
 
 **Content section**

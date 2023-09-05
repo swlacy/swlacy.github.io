@@ -8,7 +8,7 @@ tags:
 - 'RemoveMe2'
 - 'RemoveMe3'
 
-draft: true
+draft: false
 lastmod: 2023-09-04
 ---
 

@@ -1,10 +1,22 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+<h1 class="text-center">{{ .Title }}</h1>
+<div id="metadata" class="text-center sm:text-base text-sm">
+    <div>Published {{ .Date.Format "2006-01-02" }}</div>
+    {{ if gt .Lastmod .Date }}
+    <div>
+        Edited {{ .Lastmod.Format "2006-01-02" }} {{ if and .GitInfo .Site.Params.repoLink }} (<a href="{{ .Site.Params.repoLink }}/commit/{{ .GitInfo.Hash }}" target="_blank" class="font-mono underline"
+            >git:{{ .GitInfo.AbbreviatedHash }}</a
+        >) {{ end }}
+    </div>
+    {{ end }} {{ if .Params.tags }}
+    <div class="mt-2 font-mono">
+        {{ range .Params.tags }} {{ if .}}
+        <a href="/tags/{{ . | urlize }}/" class="underline">#{{ . }}</a>{{ end }} {{ end }}
+    </div>
+    {{ end }}
+</div>
+<article class="py-8 sm:text-justify">
+    <!-- Regex to add heading anchors -->
+    {{ .Content | replaceRE "(<h[1-6]\\sid=\"([^\"]+)\"\\s?>)(.+)(</h[1-6]+>)" "${1}<a class=\"anchor nodec\" href=\"#${2}\"><span class=\"hover-link\">${3}<span class=\"hash\"></span></span></a>${4}" | safeHTML }}
+</article>
 {{ end }}

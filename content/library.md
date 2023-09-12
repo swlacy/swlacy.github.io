@@ -1,8 +1,8 @@
 ---
 draft: true
 
-title: {{ replace .File.ContentBaseName "-" " " | title }}
-date: {{ now.Format "2006-01-02" }}
+title: Library
+date: 2023-09-11
 
 description: 'One-sentence description of this post.'
 tags: ['tag1', 'tag2']

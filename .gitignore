@@ -3,5 +3,6 @@ public/
 .hugo_build.lock
 hugo_stats.json
 
-# TailwindCSS binary
+# TailwindCSS binary - required to build theme CSS
+# Get tbhis from https://github.com/tailwindlabs/tailwindcss/releases
 themes/blank/tailwindcss/tailwindcss

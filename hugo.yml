@@ -8,20 +8,30 @@ title: Sid's Blog
 languageCode: en-us
 timeZone: America/Los_Angeles
 
-copyright: >-
-  Copyright notice here.
+params:
+  name: Sid Lacy
+  license: MIT License
+  repoLink: https://github.com/swlacy/swlacy.github.io
+  pfp: /img/aboutpic.webp
+  mainline: Hey, I'm Sid.
+  subline: I publish stuff I find interesting here.
 
 menus:
-  main:
-    - name: nnnoikecnewcnjewme
-      pageRef: /
-      weight: 10
-    - name: Posts
-      pageRef: /posts
-      weight: 20
-    - name: Tags
-      pageRef: /tags
-      weight: 30
+  header:
+    - name: about
+      url: /about
+      weight: 1
+    - name: posts
+      url: /posts
+      weight: 2
+    - name: tags
+      url: /tags
+      weight: 3
+    - name: library
+      url: /library
+      weight: 4
+
+test: test
 
 build:
   buildStats:
@@ -37,30 +47,30 @@ watch: true
 enableGitInfo: true
 enableRobotsTXT: true
 
-# frontmatter:
-#   date:
-#   - date
-#   - publishdate
-#   - pubdate
-#   - published
-#   - lastmod
-#   - modified
-#   expiryDate:
-#   - expirydate
-#   - unpublishdate
-#   lastmod:
-#   - :git
-#   - lastmod
-#   - modified
-#   - date
-#   - publishdate
-#   - pubdate
-#   - published
-#   publishDate:
-#   - publishdate
-#   - pubdate
-#   - published
-#   - date
+frontmatter:
+  date:
+  - date
+  - publishdate
+  - pubdate
+  - published
+  - lastmod
+  - modified
+  expiryDate:
+  - expirydate
+  - unpublishdate
+  lastmod:
+  - :git
+  - lastmod
+  - modified
+  - date
+  - publishdate
+  - pubdate
+  - published
+  publishDate:
+  - publishdate
+  - pubdate
+  - published
+  - date
 
 imaging:
   bgColor: '#ffffff'
@@ -70,23 +80,17 @@ imaging:
 
 markup:
   highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: false
-    hl_Lines: ""
-    hl_inline: false
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    noHl: false
-    style: monokai
+    noClasses: false
     tabWidth: 4
+    lineNos: true
+    lineNoStart: 1
+    hl_Lines: ''
   tableOfContents:
     endLevel: 3
     ordered: false
     startLevel: 2
+
+pygmentsOptions: linenos=inline
 
 minify:
   disableCSS: false
@@ -127,4 +131,7 @@ minify:
 
 paginate: 16
 removePathAccents: true
-summaryLength: 64
+summaryLength: 48
+
+taxonomies:
+  tag: tags

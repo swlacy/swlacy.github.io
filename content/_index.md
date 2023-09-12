@@ -1,5 +1,6 @@
 ---
-title: Home
+title: Hey, I'm Sid
+
 ---
 
-Test test test.
+I publish stuff I find interesting here.

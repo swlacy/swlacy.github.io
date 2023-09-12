@@ -1,2 +1,18 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<header class="p-4 bg-light-primary dark:bg-dark-primary text-center">
+    <nav class="max-w-3xl m-auto text-light-text dark:text-dark-text">
+        <div class="mb-2 text-2xl font-mono">
+            <a href="/">{{ .Site.Title }}</a>
+        </div>
+        {{ if .Site.Menus.header }}
+        <div class="flex space-x-2 justify-center sm:text-base text-sm font-mono">
+            {{ $menuIdx := sub (len $.Site.Menus.header) 1 }} {{ range $idx, $item := .Site.Menus.header }}
+            <a href="{{ .URL }}" class="underline">{{ $item.Name | safeHTML }}</a>
+            {{ if lt $idx $menuIdx }}
+            <span>&bull;</span>
+            {{ end }} {{ end }}
+        </div>
+        {{ end }} {{ if .Site.Params.tagline }}
+        <div>{{ .Site.Params.tagline }}</div>
+        {{ end }}
+    </nav>
+</header>

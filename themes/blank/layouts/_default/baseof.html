@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body>
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
-</body>
+<html lang="{{ site.Language.LanguageCode }}">
+    {{ partial "head.html" . }}
+    <body class="flex flex-col h-screen justify-between text-lg bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text selection:bg-theme/25">
+        {{ partial "header.html" . }}
+        <main class="mx-auto mb-auto p-4 max-w-3xl">{{ block "main" . }}{{ end }}</main>
+        {{ partial "footer.html" . }}
+    </body>
 </html>

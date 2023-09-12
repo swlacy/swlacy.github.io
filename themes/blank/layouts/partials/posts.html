@@ -1,0 +1,12 @@
+<div class="py-4 sm:text-justify">
+    {{ range .RegularPages.ByPublishDate.Reverse }}
+    <a href="{{ .RelPermalink }}">
+        <div class="my-4 p-4 border rounded">
+            <h2>{{ .LinkTitle }}</h2>
+            <p class="text-sm">{{ .Date.Format "2006-01-02" }} &bull; {{ .Description }}</p>
+            <p class="italic">{{ .Summary }}</p>
+            <p class="mb-0 text-sm text-center">Read More...</p>
+        </div>
+    </a>
+    {{ end }}
+</div>

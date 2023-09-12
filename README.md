@@ -2,6 +2,6 @@
 
 *Also served at [swlacy.com](https://swlacy.com).*
 
-Another security and tech blog. Built with Hugo and Tailwind.
+Another security/tech guy blog. Built with [Hugo](https://gohugo.io) and [Tailwind](https://tailwindcss.com).
 
-All content and source under [MIT](https://opensource.org/license/mit) unless specified otherwise.
+Content and source under [MIT](https://opensource.org/license/mit) unless specified otherwise.

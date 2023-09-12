@@ -1,8 +1,20 @@
-{{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
-{{ end }}
+{{ define "main" }} {{ if eq .Section "posts"}} {{ $wordCount := 0 }} {{ range .RegularPages }} {{ $wordCount = add $wordCount (len (split .Plain " ")) }} {{ end }}
+<h1 class="text-center">{{ .Title }}</h1>
+<p class="mb-0 text-center sm:text-base text-sm">~{{ $wordCount | lang.NumFmt 0 }} words across {{ len .RegularPages }} page{{ if gt (len .RegularPages) 1 }}s{{ end }}.</p>
+{{ partial "posts" . }} {{ else if eq .Section "tags"}} {{ if .RegularPages }}
+<h1 class="text-center font-mono">#{{ .Title }}</h1>
+<p class="mb-0 text-center sm:text-base text-sm">{{ len .RegularPages }} post{{ if gt (len .RegularPages) 1 }}s{{ end }} under <span class="font-mono">#{{ .Title }}</span>.</p>
+{{ partial "posts" . }} {{ else }}
+<h1 class="text-center">{{ .Title }}</h1>
+<p class="text-center sm:text-base text-sm">{{ len .Site.Taxonomies.tags }} tags across {{ len .Site.RegularPages }} pages.</p>
+<div class="flex py-2 place-content-center space-x-4">
+    {{ range .Site.Taxonomies.tags.ByCount }}
+    <a href="/tags/{{ .Name | urlize }}" class="text-xl font-mono">
+        <div class="my-2 p-2 text-center border rounded">#{{ .Name }}<sup>({{ .Count }})</sup></div>
+    </a>
+
+    {{ end }}
+</div>
+{{ end }} {{ else }}
+<p>This is a new section and needs a template.</p>
+{{ end }} {{ end }}

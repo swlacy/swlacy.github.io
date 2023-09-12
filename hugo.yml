@@ -12,9 +12,6 @@ params:
   name: Sid Lacy
   license: MIT License
   repoLink: https://github.com/swlacy/swlacy.github.io
-  pfp: /img/aboutpic.webp
-  mainline: Hey, I'm Sid.
-  subline: I publish stuff I find interesting here.
 
 menus:
   header:

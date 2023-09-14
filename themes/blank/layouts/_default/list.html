@@ -6,7 +6,7 @@
 <p class="mb-0 text-center sm:text-base text-sm">{{ len .RegularPages }} post{{ if gt (len .RegularPages) 1 }}s{{ end }} under <span class="font-mono">#{{ .Title }}</span>.</p>
 {{ partial "posts" . }} {{ else }}
 <h1 class="text-center">{{ .Title }}</h1>
-<p class="text-center sm:text-base text-sm">{{ len .Site.Taxonomies.tags }} tags across {{ len .Site.RegularPages }} pages.</p>
+<p class="text-center sm:text-base text-sm">{{ len .Site.Taxonomies.tags }} tag{{ if gt (len .Site.Taxonomies.tags) 1 }}s{{ end }} across {{ len .Site.RegularPages }} page{{ if gt (len .RegularPages) 1 }}s{{ end }}.</p>
 <div class="flex py-2 place-content-center space-x-4">
     {{ range .Site.Taxonomies.tags.ByCount }}
     <a href="/tags/{{ .Name | urlize }}" class="text-xl font-mono">

@@ -1,0 +1,4 @@
+<div>
+    <img src="{{ .Destination }}" alt="{{ with .Text }}{{ . }}{{ else }}{{ .Destination }}{{ end }}" class="mt-4 mb-1 w-full rounded" />
+    <div class="text-right sm:text-sm text-xs italic opacity-50">{{ .Text }}</div>
+</div>

@@ -36,13 +36,6 @@ article ol {
     @apply list-[decimal];
 }
 
-/* Inline images */
-p img {
-    @apply my-4;
-    @apply w-full;
-    @apply rounded;
-}
-
 /* Headings */
 h1,
 h2,

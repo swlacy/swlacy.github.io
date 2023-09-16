@@ -5,7 +5,9 @@
 <body
     class="flex flex-col h-screen justify-between text-lg bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text selection:bg-theme/25">
     {{ partial "header.html" . }}
-    <main class="mx-auto mb-auto p-4 max-w-3xl">{{ block "main" . }}{{ end }}</main>
+    <main class="mx-auto mb-auto p-4 max-w-3xl">
+        <div class="my-4">{{ block "main" . }}{{ end }}</div>
+    </main>
     {{ partial "footer.html" . }}
 </body>
 

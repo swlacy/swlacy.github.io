@@ -28,7 +28,7 @@ article ul,
 article ol {
     @apply ml-1.5;
     @apply pl-4;
-    @apply mb-2;
+    @apply mb-4;
 }
 
 article ul {
@@ -102,6 +102,7 @@ blockquote {
     @apply pl-2;
     @apply bg-light-accent;
     @apply dark:bg-dark-accent;
+    @apply italic;
 }
 
 /* General code */

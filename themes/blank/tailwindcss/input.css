@@ -105,6 +105,15 @@ blockquote {
     @apply italic;
 }
 
+/* Divider lines */
+hr {
+    @apply my-8;
+    @apply border-dashed;
+    @apply border-t-2;
+    @apply border-light-accent;
+    @apply dark:border-dark-accent;
+}
+
 /* General code */
 code {
     @apply p-1;

@@ -1,12 +1,16 @@
-{{ define "main" }} {{ if eq .Section "posts"}} {{ $wordCount := 0 }} {{ range .RegularPages }} {{ $wordCount = add $wordCount (len (split .Plain " ")) }} {{ end }}
+{{ define "main" }} {{ if or (eq .Section "posts") (eq .Section "old")}} {{ $wordCount := 0 }} {{ range .RegularPages }}
+{{ $wordCount = add $wordCount (len (split .Plain " ")) }} {{ end }}
 <h1 class="text-center">{{ .Title }}</h1>
-<p class="mb-0 text-center sm:text-base text-sm">~{{ $wordCount | lang.NumFmt 0 }} words across {{ len .RegularPages }} page{{ if ne (len .RegularPages) 1 }}s{{ end }}.</p>
+<p class="mb-0 text-center sm:text-base text-sm">~{{ $wordCount | lang.NumFmt 0 }} words across {{ len .RegularPages }}
+    page{{ if ne (len .RegularPages) 1 }}s{{ end }}.</p>
 {{ partial "posts" . }} {{ else if eq .Section "tags"}} {{ if .RegularPages }}
 <h1 class="text-center font-mono">#{{ .Title }}</h1>
-<p class="mb-0 text-center sm:text-base text-sm">{{ len .RegularPages }} post{{ if ne (len .RegularPages) 1 }}s{{ end }} under <span class="font-mono">#{{ .Title }}</span>.</p>
+<p class="mb-0 text-center sm:text-base text-sm">{{ len .RegularPages }} post{{ if ne (len .RegularPages) 1 }}s{{ end }}
+    under <span class="font-mono">#{{ .Title }}</span>.</p>
 {{ partial "posts" . }} {{ else }}
 <h1 class="text-center">{{ .Title }}</h1>
-<p class="text-center sm:text-base text-sm">{{ len .Site.Taxonomies.tags }} tag{{ if ne (len .Site.Taxonomies.tags) 1 }}s{{ end }} across {{ len .Site.RegularPages }} page{{ if ne (len .RegularPages) 1 }}s{{ end }}.</p>
+<p class="text-center sm:text-base text-sm">{{ len .Site.Taxonomies.tags }} tag{{ if ne (len .Site.Taxonomies.tags) 1
+    }}s{{ end }} across {{ len .Site.RegularPages }} page{{ if ne (len .RegularPages) 1 }}s{{ end }}.</p>
 <div class="flex py-2 place-content-center space-x-4">
     {{ range .Site.Taxonomies.tags.ByCount }}
     <a href="/tags/{{ .Name | urlize }}" class="text-xl font-mono">
